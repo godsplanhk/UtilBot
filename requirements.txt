@@ -1,0 +1,9 @@
+Telethon==1.37.0
+python-dotenv
+cryptg
+aiohttp
+hachoir
+pillow
+pypdf2
+ocrmypdf
+python-docx
