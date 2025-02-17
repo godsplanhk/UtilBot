@@ -2,8 +2,11 @@ import ocrmypdf
 from PyPDF2 import PdfReader
 import os
 import docx
+import pypandoc
 
 WNS_COLS_NUM = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}num"
+def convert_docx_to_pdf(input_path, output_path):
+    pypandoc.convert_file(input_path, 'pdf', outputfile=output_path)
 
 
 def set_number_of_columns(section, cols):
@@ -34,5 +37,7 @@ def qExtractor(inputPdf):
         out =  str(count) + ") " + text.rstrip()
         print(out)
         f.add_paragraph(out)
-    f.save("./out/" + inputPdf.split(".")[0] + ".docx")
-    return "./out/" + inputPdf.split(".")[0]+".docx"
+    filename =inputPdf.split(".")[0]
+    f.save("./out/" + filename + ".docx")
+    convert_docx_to_pdf("./out/"+filename+".docx","./pdf/"+filename+".pdf")
+    return "./out/pdf/" + filename+".pdf"

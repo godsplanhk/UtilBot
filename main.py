@@ -3,6 +3,7 @@ from telethon.utils import get_attributes
 from dotenv import load_dotenv
 from os import getenv,path
 from utils import ocr_doc
+import pypandoc
 from telethon.tl.types import InputMediaUploadedDocument
 load_dotenv()
 
