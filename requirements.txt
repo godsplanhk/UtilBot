@@ -6,4 +6,5 @@ hachoir
 pillow
 pypdf2
 ocrmypdf
+pypandoc
 python-docx
